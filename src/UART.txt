@@ -1,0 +1,38 @@
+#include<lpc17xx.h>
+void UART0_Init(void);
+unsigned int i;
+unsigned char *ptr, arr[] = "GREAT DAY human :) \n";
+
+int main(void)
+{
+ UART0_Init();
+ while(1)
+ {
+  ptr = arr;
+  while ( *ptr != '\0')
+  {
+   LPC_UART0->THR = *ptr++;
+  }
+  for(i=0;i<=60000;i++);
+ }
+}
+
+void UART0_Init(void)
+{
+ LPC_SC->PCONP = 0x00000008;		
+	//UART0 pheripheral enable
+
+ LPC_PINCON->PINSEL0 = 0x00000050;
+ LPC_UART0->LCR = 0x00000083;		
+	//enable divisor latch, parity dispable, 1 bit stop and 1 byte wordlength
+
+ LPC_UART0->DLM = 0x00;
+ LPC_UART0->DLL = 0x1A;
+	//select band rate 9600 bps for 4MHz
+
+ LPC_UART0->LCR = 0x03;
+	//disable divisor latch
+
+ LPC_UART0->FCR = 0x07; 
+	//FIFO enable,RX FIFO reset, TX FIFO reset 
+}

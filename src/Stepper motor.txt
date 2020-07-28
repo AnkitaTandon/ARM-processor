@@ -1,0 +1,43 @@
+#include<LPC17XX.H>
+
+void clock(void);
+void anti_clock(void);
+
+int var1,var2,i=0,j=0,k=0;
+
+int main(void){
+	LPC_PINCON->PINSEL4=0X00000000;		//P2.0 to P2.3 GPIO
+	LPC_GPIO2->FIODIR=0X0000000F;		//P2.0 to P2.3 OUTPUT
+
+	while(1){
+		for(j=0;j<50;j++)		//the clock function is called 50 times
+		clock();
+
+		for(k=0;k<50000;k++);		//for delay in rotation
+
+		for(j=0;j<50;j++)		//the anti-clock function is called 50 times
+		anti_clock();
+
+		for(k=0;k<50000;k++);		//for delay in rotation
+	}
+}
+
+void clock(void){			//function for clockwise
+	var1=0X00000001;
+		// A B C D steppings	
+	for(i=0;i<=3;i++){
+		LPC_GPIO2->FIOPIN=var1;
+		var1=var1<<1;
+		for(k=0;k<50000;k++);	//for speed variation
+	}
+}
+
+void anti_clock(void){			//function for anti-clockwise
+	var1=0X00000008;
+		// A B C D steppings
+	for(i=0;i<=3;i++){
+		LPC_GPIO2->FIOPIN=var1;
+		var1=var1>>1;
+		for(k=0;k<50000;k++);	//for speed variation
+	}
+}

@@ -1,0 +1,29 @@
+#include <LPC17xx.H>
+	
+int main()
+{
+	int count,i;
+	LPC_PINCON->PINSEL0 = 0X00000000;	
+	//Configure P0.4 to P0.11 as GPIO
+
+	LPC_GPIO0->FIODIR = 0X00000FF0;
+	//Configure P0.4 to P0.11 as OUTPUT
+
+	while(1)
+	{	//outputs 0 to FE 
+		for(count=0;count<0xFF;count++)
+		{
+			i=count;
+			i=i<<4;
+			LPC_GPIO0->FIOPIN = i;
+		}
+
+		//outputs FF to 1
+		for(count=0xFF;count>0;count--)
+		{
+			i=count;
+			i=i<<4;
+			LPC_GPIO0->FIOPIN = i;
+		}
+	}
+}
