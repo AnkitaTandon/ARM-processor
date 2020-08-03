@@ -20,8 +20,8 @@ Learn how to use *Keil Software* from [here](https://www.youtube.com/watch?v=ED2
 2. Triangular wave
 3. 7 segment display
 4. Stepper Motor
-5. UART: to learn the detail, click [here](https://drive.google.com/file/d/1yJnENCeT2e_TFNJ5Ksa7yWCwCQfuObPv/view)
-    [Here](https://classroom.google.com/u/0/c/NTgyOTQwODI1NzVa/a/OTI1NzEyNjk5MzJa/details) is a pdf on UART 
+5. UART: to learn the details, click [here](https://drive.google.com/file/d/1yJnENCeT2e_TFNJ5Ksa7yWCwCQfuObPv/view)!
+The pdf on UART is [here](https://drive.google.com/open?id=13xdDeWjQd2ubohxqKbpDWhhpAtUOZoYl&authuser=0)
 
 ## Setup
  - Open the Keil Application> Project> New project and then create a folder
