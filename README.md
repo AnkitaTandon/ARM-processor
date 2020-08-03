@@ -6,6 +6,23 @@ To run ARM programs [download](https://drive.google.com/file/d/1D2ThQHlwVm-AKi4E
 
 Learn how to use *Keil Software* from [here](https://www.youtube.com/watch?v=ED2wdbd6S68)
 
+## Holds
+
+#### Assembly lang (s/w)
+1. Bubble Sort
+2. Arithematic Operations: choose an option to find the sum, difference, product or quotient 
+3. Fibonicci series
+4. nCr 
+5. Arithematic op. in **float**: sum, difference, product, square, cube
+
+#### C lang (h/w)
+1. Sine wave
+2. Triangular wave
+3. 7 segment display
+4. Stepper Motor
+5. UART: to learn the detail, click [here](https://drive.google.com/file/d/1yJnENCeT2e_TFNJ5Ksa7yWCwCQfuObPv/view)
+    [Here](https://classroom.google.com/u/0/c/NTgyOTQwODI1NzVa/a/OTI1NzEyNjk5MzJa/details) is a pdf on UART 
+
 ## Setup
  - Open the Keil Application> Project> New project and then create a folder
 
